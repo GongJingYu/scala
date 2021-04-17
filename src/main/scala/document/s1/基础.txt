@@ -1,0 +1,81 @@
+表达式:
+    println(1) // 1
+    println(1 + 1) // 2
+    println("Hello!") // Hello!
+    println("Hello," + " world!") // Hello, world!
+
+常量：val
+变量：var
+val a = 10; // 不可变
+var x = 20; // 可变
+
+函数：
+    函数是可以带有参数的表达式，可以是匿名函数，也可以给函数命名
+    (x:Int) => x+1
+
+    val add1 = (x:Int) => x+1
+    val add2 = (x:Int,y:Int) => x+y
+    val add3 = () => 42
+
+方法:
+    方法的表现和行为与函数类似，但他们之间有一些关键的差别，方法需要 def 来定义,方法可以有多行表达式
+    def add1(x:Int,y:Int):Int ={  等价于  def add2(x:Int,y:Int):Int = x+y
+        x+y
+    }
+    def add3(x:Int,y:Int)(z:Int):Int = (x+y)*z
+    def add4:String = System.getProperty("os.name")
+
+类：
+    package document.s1
+
+    class Greeter(prefix: String, suffix: String) {
+      def greet(name: String):Unit={
+        println(prefix + name + suffix)
+      }
+    }
+
+    // 单例对象
+    object Greeter{
+
+      def main(args: Array[String]): Unit = {
+        val greeter = new Greeter("Hello ","I am gjy");
+        greeter.greet("jim")
+      }
+    }
+
+样例类(case class)：(类似于Java中的枚举类)
+    样例类一般用于不可变对象，并且可做值比较
+    case class Point(x: Int, y: Int)
+    val point = Point(1, 2)
+        val anotherPoint = Point(1, 2)
+        val yetAnotherPoint = Point(2, 2)
+
+        if (point == anotherPoint) {
+          println(point + " and " + anotherPoint + " are the same.")
+        } else {
+          println(point + " and " + anotherPoint + " are different.")
+        }
+        if (point == yetAnotherPoint) {
+          println(point + " and " + yetAnotherPoint + " are the same.")
+        } else {
+          println(point + " and " + yetAnotherPoint + " are different.")
+        }
+
+对象：
+    对象是单实例，可以把它看做自己类的单例
+    object Greeter{
+
+    }
+
+特质：
+    特质是包含某些字段和方法的类型，可以组合多个特质
+
+统一类型：
+             Any
+    AnyVal          AnyRef
+    Double,Float    List,Option
+    Int,Long,Byte   YourClass
+    Short,Boolean
+    Char,Unit(void)       Null
+            Nothing
+
