@@ -1,0 +1,17 @@
+字节流：
+输入：InputStream；输出：OutputStream
+
+FileInputStream、BufferedInputStream
+ObjectInputStream；PipedInputStream；StringBufferInputStream；ByteBufferInputStream
+
+FileOutputStream、BufferedOutputStream
+ObjectOutputStream；PipedOutputStream；StringBufferInputStream；ByteBufferInputStream
+
+字符流：
+输入：Reader；输出：Writer
+
+InputStreamReader、FileReader
+BufferedReader；PipedReader；StringReader；XmlReader
+
+OutputStreamWriter、FileWriter
+BufferedWrite；PipedWriter；StringWriter；XmlWriter
